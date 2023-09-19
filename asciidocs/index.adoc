@@ -51,4 +51,107 @@ ifdef::backend-html5[]
 *** Problem: Man braucht eine EAN-Code-Produktdatenbank. Die sind meist kostenpflichtig.
 *** Es ist zu überprüfen, ob aufgrund einer solchen Datenbank festgestellt werden kann, welches Verpackungsmaterial verwendet wurde
 
-===
+=== Github-Übung mit Professor Aberger
+
+==== Neues repo erstellen
+
+image::create-repo.png[]
+
+==== Repo in der shell mit ssh klonen
+
+Falls das wegen des fehlenden public keys nicht geht, einen neuen rsa key mit:
+
+[source, bash]
+----
+ssh-keygen -t rsa
+----
+
+erstellen.
+
+Dann die File id_rsa.pub die soeben erstellt wurde bei github unter settings > ssh und gpg keys > neuen ssh key erstellen und den inhalt der file dann einfügen
+
+image::add-key.png[]
+
+==== Benutzerdaten zu git hinzufügen
+
+[source, bash]
+----
+git config --global user.name [username]
+----
+
+die primary Email in github durch settings > emails herausfinden und in
+
+[source, bash]
+----
+git config --global user.email [email]
+----
+einsetzen
+
+==== Java Projekt erstellen
+
+In dem geklonten projekt ein neues maven projekt erstellen
+
+image::create-project.png[]
+
+als group die umgekehrte firmen domäne eingeben in diesem Fall at.htlleonding angeben
+
+==== Eine änderung im Projekt durchführen
+* Eine neue README File erstellen und dann das Projekt committen mit der message "Initial commit"
+* Das repo pushen
+* Einen Partner in sein Projekt einladen
+* mit intellij die pom.xml als projekt öffnen
+* nachdem der Partner jetzt einen commit gepusht hat, kann man mit git pull das lokale repository updaten
+
+
+==== Git Befehle (merge conflicts)
+bei merge conflicts mit rebase lösen
+
+[source, bash]
+----
+git pull --rebase
+----
+
+oder mit merge
+
+[source, bash]
+----
+git pull --no-rebase
+----
+falls noch nicht committed wurde, kann durch
+[source, bash]
+----
+git stash
+----
+die momentane arbeit abgelegt werden um sie nachher mit
+[source, bash]
+----
+git stash pop
+----
+
+==== Feature Branches
+
+einen branch erstellen mit
+
+[source, bash]
+----
+git branch [branchname]
+----
+oder erstellen und gleich wechseln
+[source, bash]
+----
+git checkout -b [branchname]
+----
+einen Branch wechseln
+[source, bash]
+----
+git switch [branchname]
+----
+
+Bei Arbeiten auf einem feature branch immer wieder mit
+[source, bash]
+----
+git (merge/rebase) main
+----
+den aktuellen stand des main branches auf den feature branch bringen
+
+Wenn das Feature fertig gebaut wurde, muss der Branch wieder mit dem main branch gemerged werden dies kann durch manuelles mergen oder durch eine pull request stattfinden.
