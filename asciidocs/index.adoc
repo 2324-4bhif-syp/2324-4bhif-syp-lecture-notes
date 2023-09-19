@@ -22,3 +22,15 @@ ifdef::backend-html5[]
 // https://api.abc.berufsbildendeschulen.at/uploads/Lehrplaene_der_Hoeheren_technischen_und_gewerblichen_Lehranstalten_2015_Stand_14_09_2021_a028f44eda.pdf
 
 // https://www.abc.berufsbildendeschulen.at/downloads/lehrplaene-technische-gewerbliche-und-kunstgewerbliche-schulen
+
+== 2023-09-19
+
+=== Ideenfindung zur Projektauswahl
+
+* Folgende Bereiche sind sehr gut geeignet, um ggf. einen Wettbewerb zu gewinnen:
+
+** Umwelt
+** Lernen / Schule
+** Selbsthilfe / Hilfe für andere Personen / Communities
+** Sport
+** Hilfe für beeinträchtigte Personen
