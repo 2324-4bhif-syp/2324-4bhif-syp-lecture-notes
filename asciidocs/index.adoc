@@ -35,3 +35,20 @@ ifdef::backend-html5[]
 ** Sport
 ** Hilfe für beeinträchtigte Personen
 
+* Mögliche Projekte
+
+** Winnies Baby App
+** Schludermanns Franklyn
+** Fröllers kuratierte News-Aggregator mit Themenwahl
+** Eco-Points:
+*** OBD-Sensordaten auslesen (ELM327)
+*** ev. GPS-Position erfassen
+*** Die Fahrprofile auf Umweltfreundlichkeit beurteilen
+*** Es werden Eco-Points ermittelt -> als Game miteinander vergleichen
+*** ev. Plattform mit (anonymisierten) Eco-Points Ranking
+** Nuris Mülltrennungsapp
+*** EAN-Codes von Produkten einlesen und anschließend ausgeben, wohin die Verpackung entsorgt werden muss
+*** Problem: Man braucht eine EAN-Code-Produktdatenbank. Die sind meist kostenpflichtig.
+*** Es ist zu überprüfen, ob aufgrund einer solchen Datenbank festgestellt werden kann, welches Verpackungsmaterial verwendet wurde
+
+===
