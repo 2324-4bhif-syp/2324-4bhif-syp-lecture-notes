@@ -7,6 +7,7 @@ ifndef::imagesdir[:imagesdir: images]
 :icons: font
 :sectnums:    // Nummerierung der Überschriften / section numbering
 :toc: left
+:experimental:
 
 //Need this blank line after ifdef, don't know why...
 ifdef::backend-html5[]
@@ -46,12 +47,14 @@ ifdef::backend-html5[]
 *** Die Fahrprofile auf Umweltfreundlichkeit beurteilen
 *** Es werden Eco-Points ermittelt -> als Game miteinander vergleichen
 *** ev. Plattform mit (anonymisierten) Eco-Points Ranking
+*** Car Play Anbindung -> iOS, Android
 ** Nuris Mülltrennungsapp
 *** EAN-Codes von Produkten einlesen und anschließend ausgeben, wohin die Verpackung entsorgt werden muss
 *** Problem: Man braucht eine EAN-Code-Produktdatenbank. Die sind meist kostenpflichtig.
 *** Es ist zu überprüfen, ob aufgrund einer solchen Datenbank festgestellt werden kann, welches Verpackungsmaterial verwendet wurde
 
-=== Github-Übung mit Professor Aberger
+=== Github-Übung - commit/push/branch/merge/rebase
+[protokolliert durch Winnie Ilming]
 
 ==== Neues repo erstellen
 
@@ -68,9 +71,45 @@ ssh-keygen -t rsa
 
 erstellen.
 
-Dann die File id_rsa.pub die soeben erstellt wurde bei github unter settings > ssh und gpg keys > neuen ssh key erstellen und den inhalt der file dann einfügen
+Nur mit kbd:[Return] bestätigen, keinen eigenen file-name, keine Passphrase, usw eingeben.
+
+.output
+----
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/userxy/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/userxy/.ssh/id_rsa
+Your public key has been saved in /home/userxy/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:7pIJz3zvkd9J2d0nXh1dUEcb3Z+vQsmDtZ8buV6HNWLI parallels@ubuntu-linux-22-04-desktop
+The key's randomart image is:
++---[RSA 3072]----+
+|              .o=|
+|        .      oo|
+|                =|
+|            ...+=|
+|        S    +O+o|
+|    .  .  ..oE**=|
+|     = o. .  o+*O|
+|      B..  o +=+o|
+|       o.oo . =o.|
++----[SHA256]-----+
+----
+
+* im Browser auf github.com rechts oben mit rechter Maustaste auf Icon klicken
+* Settings
+* SSH und GPG keys
+* kbd:[New SSH key]
+** Titel eintragen: zB my-ssh-key
+** Mit copy-paste den Inhalt des public-keys (`id_rsa.pub`) in das Textfeld einfügen
+
+
 
 image::add-key.png[]
+
+image::add-new-ssh-key.png[]
+
 
 ==== Benutzerdaten zu git hinzufügen
 
@@ -93,9 +132,9 @@ In dem geklonten projekt ein neues maven projekt erstellen
 
 image::create-project.png[]
 
-als group die umgekehrte firmen domäne eingeben in diesem Fall at.htlleonding angeben
+als group die umgekehrte Firmendomäne eingeben, in diesem Fall `at.htlleonding` (Leider sind keine Bindestriche erlaubt).
 
-==== Eine änderung im Projekt durchführen
+==== Eine Änderung im Projekt durchführen
 * Eine neue README File erstellen und dann das Projekt committen mit der message "Initial commit"
 * Das repo pushen
 * Einen Partner in sein Projekt einladen
@@ -122,11 +161,13 @@ falls noch nicht committed wurde, kann durch
 ----
 git stash
 ----
-die momentane arbeit abgelegt werden um sie nachher mit
+die momentane Arbeit in einem eigenen Bereich verborgen werden um sie nach dem erfolgreichen Pull mit
 [source, bash]
 ----
 git stash pop
 ----
+
+wieder in die Codebasis zu integrieren.
 
 ==== Feature Branches
 
@@ -154,4 +195,4 @@ git (merge/rebase) main
 ----
 den aktuellen stand des main branches auf den feature branch bringen
 
-Wenn das Feature fertig gebaut wurde, muss der Branch wieder mit dem main branch gemerged werden dies kann durch manuelles mergen oder durch eine pull request stattfinden.
+Wenn das Feature fertig gebaut wurde, muss der Branch wieder mit dem main branch gemerged werden. Dies kann durch manuelles mergen oder durch einen pull request stattfinden.
