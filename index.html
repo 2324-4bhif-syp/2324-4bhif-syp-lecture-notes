@@ -566,7 +566,7 @@ pre.rouge .gs {
 <li><a href="#_2023_09_19">2. 2023-09-19</a>
 <ul class="sectlevel2">
 <li><a href="#_ideenfindung_zur_projektauswahl">2.1. Ideenfindung zur Projektauswahl</a></li>
-<li><a href="#_github_übung_mit_professor_aberger">2.2. Github-Übung mit Professor Aberger</a></li>
+<li><a href="#_github_übung_commitpushbranchmergerebase">2.2. Github-Übung - commit/push/branch/merge/rebase</a></li>
 </ul>
 </li>
 </ul>
@@ -646,6 +646,9 @@ pre.rouge .gs {
 <li>
 <p>ev. Plattform mit (anonymisierten) Eco-Points Ranking</p>
 </li>
+<li>
+<p>Car Play Anbindung &#8594; iOS, Android</p>
+</li>
 </ul>
 </div>
 </li>
@@ -672,9 +675,9 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_github_übung_mit_professor_aberger"><a class="anchor" href="#_github_übung_mit_professor_aberger"></a>2.2. Github-Übung mit Professor Aberger</h3>
+<h3 id="_github_übung_commitpushbranchmergerebase"><a class="anchor" href="#_github_übung_commitpushbranchmergerebase"></a>2.2. Github-Übung - commit/push/branch/merge/rebase</h3>
 <div class="sect3">
-<h4 id="_neues_repo_erstellen"><a class="anchor" href="#_neues_repo_erstellen"></a>2.2.1. Neues repo erstellen</h4>
+<h4 id="_neues_repo_erstellen"><a class="anchor" href="#_neues_repo_erstellen"></a>Neues repo erstellen</h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/create-repo.png" alt="create repo">
@@ -682,7 +685,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_repo_in_der_shell_mit_ssh_klonen"><a class="anchor" href="#_repo_in_der_shell_mit_ssh_klonen"></a>2.2.2. Repo in der shell mit ssh klonen</h4>
+<h4 id="_repo_in_der_shell_mit_ssh_klonen"><a class="anchor" href="#_repo_in_der_shell_mit_ssh_klonen"></a>2.2.1. Repo in der shell mit ssh klonen</h4>
 <div class="paragraph">
 <p>Falls das wegen des fehlenden public keys nicht geht, einen neuen rsa key mit:</p>
 </div>
@@ -695,16 +698,72 @@ pre.rouge .gs {
 <p>erstellen.</p>
 </div>
 <div class="paragraph">
-<p>Dann die File id_rsa.pub die soeben erstellt wurde bei github unter settings &gt; ssh und gpg keys &gt; neuen ssh key erstellen und den inhalt der file dann einfügen</p>
+<p>Nur mit <kbd>Return</kbd> bestätigen, keinen eigenen file-name, keine Passphrase, usw eingeben.</p>
+</div>
+<div class="listingblock">
+<div class="title">output</div>
+<div class="content">
+<pre>Generating public/private rsa key pair.
+Enter file in which to save the key (/home/userxy/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/userxy/.ssh/id_rsa
+Your public key has been saved in /home/userxy/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:7pIJz3zvkd9J2d0nXh1dUEcb3Z+vQsmDtZ8buV6HNWLI parallels@ubuntu-linux-22-04-desktop
+The key's randomart image is:
++---[RSA 3072]----+
+|              .o=|
+|        .      oo|
+|                =|
+|            ...+=|
+|        S    +O+o|
+|    .  .  ..oE**=|
+|     = o. .  o+*O|
+|      B..  o +=+o|
+|       o.oo . =o.|
++----[SHA256]-----+</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>im Browser auf github.com rechts oben mit rechter Maustaste auf Icon klicken</p>
+</li>
+<li>
+<p>Settings</p>
+</li>
+<li>
+<p>SSH und GPG keys</p>
+</li>
+<li>
+<p><kbd>New SSH key</kbd></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Titel eintragen: zB my-ssh-key</p>
+</li>
+<li>
+<p>Mit copy-paste den Inhalt des public-keys (<code>id_rsa.pub</code>) in das Textfeld einfügen</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/add-key.png" alt="add key">
 </div>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/add-new-ssh-key.png" alt="add new ssh key">
+</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_benutzerdaten_zu_git_hinzufügen"><a class="anchor" href="#_benutzerdaten_zu_git_hinzufügen"></a>2.2.3. Benutzerdaten zu git hinzufügen</h4>
+<h4 id="_benutzerdaten_zu_git_hinzufügen"><a class="anchor" href="#_benutzerdaten_zu_git_hinzufügen"></a>2.2.2. Benutzerdaten zu git hinzufügen</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="bash">git config <span class="nt">--global</span> user.name <span class="o">[</span>username]</code></pre>
@@ -723,7 +782,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_java_projekt_erstellen"><a class="anchor" href="#_java_projekt_erstellen"></a>2.2.4. Java Projekt erstellen</h4>
+<h4 id="_java_projekt_erstellen"><a class="anchor" href="#_java_projekt_erstellen"></a>2.2.3. Java Projekt erstellen</h4>
 <div class="paragraph">
 <p>In dem geklonten projekt ein neues maven projekt erstellen</p>
 </div>
@@ -733,11 +792,11 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="paragraph">
-<p>als group die umgekehrte firmen domäne eingeben in diesem Fall at.htlleonding angeben</p>
+<p>als group die umgekehrte Firmendomäne eingeben, in diesem Fall <code>at.htlleonding</code> (Leider sind keine Bindestriche erlaubt).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_eine_änderung_im_projekt_durchführen"><a class="anchor" href="#_eine_änderung_im_projekt_durchführen"></a>2.2.5. Eine änderung im Projekt durchführen</h4>
+<h4 id="_eine_änderung_im_projekt_durchführen"><a class="anchor" href="#_eine_änderung_im_projekt_durchführen"></a>2.2.4. Eine Änderung im Projekt durchführen</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -759,7 +818,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_git_befehle_merge_conflicts"><a class="anchor" href="#_git_befehle_merge_conflicts"></a>2.2.6. Git Befehle (merge conflicts)</h4>
+<h4 id="_git_befehle_merge_conflicts"><a class="anchor" href="#_git_befehle_merge_conflicts"></a>2.2.5. Git Befehle (merge conflicts)</h4>
 <div class="paragraph">
 <p>bei merge conflicts mit rebase lösen</p>
 </div>
@@ -785,16 +844,19 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="paragraph">
-<p>die momentane arbeit abgelegt werden um sie nachher mit</p>
+<p>die momentane Arbeit in einem eigenen Bereich verborgen werden um sie nach dem erfolgreichen Pull mit</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="bash">git stash pop</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>wieder in die Codebasis zu integrieren.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_feature_branches"><a class="anchor" href="#_feature_branches"></a>2.2.7. Feature Branches</h4>
+<h4 id="_feature_branches"><a class="anchor" href="#_feature_branches"></a>2.2.6. Feature Branches</h4>
 <div class="paragraph">
 <p>einen branch erstellen mit</p>
 </div>
@@ -831,7 +893,7 @@ pre.rouge .gs {
 <p>den aktuellen stand des main branches auf den feature branch bringen</p>
 </div>
 <div class="paragraph">
-<p>Wenn das Feature fertig gebaut wurde, muss der Branch wieder mit dem main branch gemerged werden dies kann durch manuelles mergen oder durch eine pull request stattfinden.</p>
+<p>Wenn das Feature fertig gebaut wurde, muss der Branch wieder mit dem main branch gemerged werden. Dies kann durch manuelles mergen oder durch einen pull request stattfinden.</p>
 </div>
 </div>
 </div>
@@ -841,7 +903,7 @@ pre.rouge .gs {
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2023-09-20 08:55:14 UTC
+Last updated 2023-09-20 09:24:19 UTC
 </div>
 </div>
 </body>
