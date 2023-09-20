@@ -435,6 +435,120 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge, pre.rouge .w {
+  color: #24292f;
+  background-color: #f6f8fa;
+}
+pre.rouge .k, pre.rouge .kd, pre.rouge .kn, pre.rouge .kp, pre.rouge .kr, pre.rouge .kt, pre.rouge .kv {
+  color: #cf222e;
+}
+pre.rouge .gr {
+  color: #f6f8fa;
+}
+pre.rouge .gd {
+  color: #82071e;
+  background-color: #ffebe9;
+}
+pre.rouge .nb {
+  color: #953800;
+}
+pre.rouge .nc {
+  color: #953800;
+}
+pre.rouge .no {
+  color: #953800;
+}
+pre.rouge .nn {
+  color: #953800;
+}
+pre.rouge .sr {
+  color: #116329;
+}
+pre.rouge .na {
+  color: #116329;
+}
+pre.rouge .nt {
+  color: #116329;
+}
+pre.rouge .gi {
+  color: #116329;
+  background-color: #dafbe1;
+}
+pre.rouge .kc {
+  color: #0550ae;
+}
+pre.rouge .l, pre.rouge .ld, pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
+  color: #0550ae;
+}
+pre.rouge .sb {
+  color: #0550ae;
+}
+pre.rouge .bp {
+  color: #0550ae;
+}
+pre.rouge .ne {
+  color: #0550ae;
+}
+pre.rouge .nl {
+  color: #0550ae;
+}
+pre.rouge .py {
+  color: #0550ae;
+}
+pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
+  color: #0550ae;
+}
+pre.rouge .o, pre.rouge .ow {
+  color: #0550ae;
+}
+pre.rouge .gh {
+  color: #0550ae;
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #0550ae;
+  font-weight: bold;
+}
+pre.rouge .s, pre.rouge .sa, pre.rouge .sc, pre.rouge .dl, pre.rouge .sd, pre.rouge .s2, pre.rouge .se, pre.rouge .sh, pre.rouge .sx, pre.rouge .s1, pre.rouge .ss {
+  color: #0a3069;
+}
+pre.rouge .nd {
+  color: #8250df;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #8250df;
+}
+pre.rouge .err {
+  color: #f6f8fa;
+  background-color: #82071e;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cm, pre.rouge .cp, pre.rouge .cpf, pre.rouge .c1, pre.rouge .cs {
+  color: #6e7781;
+}
+pre.rouge .gl {
+  color: #6e7781;
+}
+pre.rouge .gt {
+  color: #6e7781;
+}
+pre.rouge .ni {
+  color: #24292f;
+}
+pre.rouge .si {
+  color: #24292f;
+}
+pre.rouge .ge {
+  color: #24292f;
+  font-style: italic;
+}
+pre.rouge .gs {
+  color: #24292f;
+  font-weight: bold;
+}
+</style>
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -442,7 +556,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">Thomas W. Stütz</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2023-09-19</span>
+<span id="revdate">2023-09-20</span>
 <br><span id="revremark">Informationstechnische Projekte</span>
 </div>
 <div id="toc" class="toc2">
@@ -452,6 +566,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_2023_09_19">2. 2023-09-19</a>
 <ul class="sectlevel2">
 <li><a href="#_ideenfindung_zur_projektauswahl">2.1. Ideenfindung zur Projektauswahl</a></li>
+<li><a href="#_github_übung_mit_professor_aberger">2.2. Github-Übung mit Professor Aberger</a></li>
 </ul>
 </li>
 </ul>
@@ -555,8 +670,169 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_github_übung_mit_professor_aberger"><a class="anchor" href="#_github_übung_mit_professor_aberger"></a>2.2. Github-Übung mit Professor Aberger</h3>
+<div class="sect3">
+<h4 id="_neues_repo_erstellen"><a class="anchor" href="#_neues_repo_erstellen"></a>2.2.1. Neues repo erstellen</h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/create-repo.png" alt="create repo">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_repo_in_der_shell_mit_ssh_klonen"><a class="anchor" href="#_repo_in_der_shell_mit_ssh_klonen"></a>2.2.2. Repo in der shell mit ssh klonen</h4>
 <div class="paragraph">
-<p>===</p>
+<p>Falls das wegen des fehlenden public keys nicht geht, einen neuen rsa key mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">ssh-keygen <span class="nt">-t</span> rsa</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>erstellen.</p>
+</div>
+<div class="paragraph">
+<p>Dann die File id_rsa.pub die soeben erstellt wurde bei github unter settings &gt; ssh und gpg keys &gt; neuen ssh key erstellen und den inhalt der file dann einfügen</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/add-key.png" alt="add key">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_benutzerdaten_zu_git_hinzufügen"><a class="anchor" href="#_benutzerdaten_zu_git_hinzufügen"></a>2.2.3. Benutzerdaten zu git hinzufügen</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">git config <span class="nt">--global</span> user.name <span class="o">[</span>username]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>die primary Email in github durch settings &gt; emails herausfinden und in</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">git config <span class="nt">--global</span> user.email <span class="o">[</span>email]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>einsetzen</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_java_projekt_erstellen"><a class="anchor" href="#_java_projekt_erstellen"></a>2.2.4. Java Projekt erstellen</h4>
+<div class="paragraph">
+<p>In dem geklonten projekt ein neues maven projekt erstellen</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/create-project.png" alt="create project">
+</div>
+</div>
+<div class="paragraph">
+<p>als group die umgekehrte firmen domäne eingeben in diesem Fall at.htlleonding angeben</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_eine_änderung_im_projekt_durchführen"><a class="anchor" href="#_eine_änderung_im_projekt_durchführen"></a>2.2.5. Eine änderung im Projekt durchführen</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Eine neue README File erstellen und dann das Projekt committen mit der message "Initial commit"</p>
+</li>
+<li>
+<p>Das repo pushen</p>
+</li>
+<li>
+<p>Einen Partner in sein Projekt einladen</p>
+</li>
+<li>
+<p>mit intellij die pom.xml als projekt öffnen</p>
+</li>
+<li>
+<p>nachdem der Partner jetzt einen commit gepusht hat, kann man mit git pull das lokale repository updaten</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_git_befehle_merge_conflicts"><a class="anchor" href="#_git_befehle_merge_conflicts"></a>2.2.6. Git Befehle (merge conflicts)</h4>
+<div class="paragraph">
+<p>bei merge conflicts mit rebase lösen</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">git pull <span class="nt">--rebase</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>oder mit merge</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">git pull <span class="nt">--no-rebase</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>falls noch nicht committed wurde, kann durch</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">git stash</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>die momentane arbeit abgelegt werden um sie nachher mit</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">git stash pop</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_feature_branches"><a class="anchor" href="#_feature_branches"></a>2.2.7. Feature Branches</h4>
+<div class="paragraph">
+<p>einen branch erstellen mit</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">git branch <span class="o">[</span>branchname]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>oder erstellen und gleich wechseln</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">git checkout <span class="nt">-b</span> <span class="o">[</span>branchname]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>einen Branch wechseln</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">git switch <span class="o">[</span>branchname]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bei Arbeiten auf einem feature branch immer wieder mit</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">git <span class="o">(</span>merge/rebase<span class="o">)</span> main</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>den aktuellen stand des main branches auf den feature branch bringen</p>
+</div>
+<div class="paragraph">
+<p>Wenn das Feature fertig gebaut wurde, muss der Branch wieder mit dem main branch gemerged werden dies kann durch manuelles mergen oder durch eine pull request stattfinden.</p>
+</div>
 </div>
 </div>
 </div>
@@ -565,7 +841,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2023-09-19 10:12:34 UTC
+Last updated 2023-09-20 08:55:14 UTC
 </div>
 </div>
 </body>
