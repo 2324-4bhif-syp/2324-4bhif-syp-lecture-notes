@@ -196,3 +196,19 @@ git (merge/rebase) main
 den aktuellen stand des main branches auf den feature branch bringen
 
 Wenn das Feature fertig gebaut wurde, muss der Branch wieder mit dem main branch gemerged werden. Dies kann durch manuelles mergen oder durch einen pull request stattfinden.
+
+== 2023-09-26
+
+=== Wiederholung Vorgehensmodelle
+
+=== gh-actions
+
+* https://www.scrum.org/learning-series/what-is-scrum[What is Scrum?^]
+* https://devops.com/documentation-as-code-a-game-changer-for-devops-teams/
+* https://dzone.com/articles/the-complete-introduction-to-cicd-1
+* https://docs.github.com/en/actions/quickstart
+
+
+
+
+
