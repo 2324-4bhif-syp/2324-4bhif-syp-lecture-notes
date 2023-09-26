@@ -930,6 +930,76 @@ The key's randomart image is:
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/folder-for-gh-actions.png" alt="folder for gh actions">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>jobs sind eine eigene Maschine</p>
+</li>
+<li>
+<p>jeder Job kann mehrere Steps ausführen</p>
+</li>
+<li>
+<p>jeder Step kann gh-sctions ausführen oder shell-Kommandos</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">name</span><span class="pi">:</span> <span class="s">GitHub Actions Demo</span>
+<span class="na">run-name</span><span class="pi">:</span> <span class="s">${{ github.actor }} is testing out GitHub Actions 🚀</span>
+<span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">push</span><span class="pi">]</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">demo</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Check out repository code</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">echo "💡 The ${{ github.repository }} repository has been cloned to the runner."</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">echo "🖥️ The workflow is now ready to test your code on the runner."</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">List files in the repository</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">ls ${{ github.workspace }}</span>
+          <span class="s">pwd</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">echo "🍏 This job's status is ${{ job.status }}."</span></code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_setup_java"><a class="anchor" href="#_setup_java"></a>3.2.1. Setup Java</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/actions/setup-java" class="bare">https://github.com/actions/setup-java</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-java@v3</span>
+  <span class="na">with</span><span class="pi">:</span>
+    <span class="na">distribution</span><span class="pi">:</span> <span class="s1">'</span><span class="s">temurin'</span> <span class="c1"># See 'Supported distributions' for available options</span>
+    <span class="na">java-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">17'</span>
+<span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">java HelloWorldApp.java</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hausübung"><a class="anchor" href="#_hausübung"></a>3.2.2. Hausübung</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>im Mikroprojekt eine gh-actions-pipeline erstellen, die eine Java Applikation baut und startet und "Hello World" ausgibt.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -937,7 +1007,7 @@ The key's randomart image is:
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2023-09-26 11:57:14 UTC
+Last updated 2023-09-26 12:26:46 UTC
 </div>
 </div>
 </body>
