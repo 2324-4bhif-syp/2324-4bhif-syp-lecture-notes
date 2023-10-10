@@ -1,4 +1,4 @@
-= Lecture Notes / 23-24 / 4bhif / syp
+= Lecture Notes - 23-24 - 4bhif - syp
 Thomas W. Stütz
 1.0.0, {docdate}: Informationstechnische Projekte
 ifndef::imagesdir[:imagesdir: images]
@@ -59,7 +59,7 @@ ifdef::backend-html5[]
 *** Es ist zu überprüfen, ob aufgrund einer solchen Datenbank festgestellt werden kann, welches Verpackungsmaterial verwendet wurde
 
 === Github-Übung - commit/push/branch/merge/rebase
-[protokolliert durch Winnie Ilming]
+protokolliert durch Winnie Ilming
 
 ==== Neues repo erstellen
 
@@ -259,8 +259,9 @@ jobs:
 
 * im Mikroprojekt eine gh-actions-pipeline erstellen, die eine Java Applikation baut und startet und "Hello World" ausgibt.
 
+
 == 2023-10-03
-[Al Desoky]
+Autor: Al Desoky
 
 === Automatisierung des Java-Build-Prozesses mit GitHub Actions
 
@@ -291,3 +292,88 @@ jobs:
             working-directory: backend
 
 * Dieser Codeabschnitt listet den Inhalt des "target"-Verzeichnisses auf, um zu überprüfen, ob das ausführbare Paket erstellt wurde.
+
+
+== 2023-10-10
+
+=== Struktur eines Projektverzeichnisses
+
+[plantuml,dirtree]
+----
+@startsalt
+{
+{T
++ project-root
+++ asciidocs (docs))
+++ backend
+++ frontend
+++ k8s
+}
+}
+@endsalt
+----
+
+
+=== Projektteams
+
+[cols="50%,50%"]
+|===
+|Team |Members
+
+|Winnies Baby App
+a|
+* Ilming Winnie
+* Gruber Moritz
+* Sonnleitner Lukas
+* Berg Bajtik
+
+|Schludermann Franklyn
+a|
+* Schludermann Julian
+* Aichinger Tobias
+* Cvijic Luka
+* Schnalzenberger Arwed
+
+|Fröllers kuratierte News-Aggregator mit Themenwahl
+a|
+* Fröller Felix
+* Lehner David
+* Nikolaus Alexander
+* Cao Anton
+
+|Eco-Points
+a|
+* Nestle Linus
+* Salkovic Armin
+* Daxlinger Oliver
+* Al Desoky Abdullah
+* Mali Laurent
+
+
+|Nuris Mülltrennungsapp
+a|
+* Nurceski Said
+* Balazs Balint
+* Seifried Erik
+* Breinesberger Markus
+
+|===
+
+=== Scrum
+
+image::scrum-overview.png[]
+
+https://www.scrum.org/resources/blog/scrum-auf-einem-blick-scrum-11-schritten-erklart[Quelle: scrum^]
+
+=== MVP - Minimum Viable Produkt
+
+A minimum viable product (MVP) is a version of a product with just enough features to be usable by early customers who can then provide feedback for future product development. https://en.wikipedia.org/wiki/Minimum_viable_product[wikipedia^]
+
+=== Time boxing
+
+Timeboxing is a time management technique used in Scrum and Agile project management, where specific tasks are allocated fixed and realistic deadlines. This ensures efficient use of time to complete them within the defined periods, ranging from minutes to weeks or months based on task complexity. https://timeular.com/blog/timeboxing/[Timeboxing: Definition, Benefits, and How It Works^]
+
+
+
+
+
