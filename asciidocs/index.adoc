@@ -24,6 +24,11 @@ ifdef::backend-html5[]
 
 // https://www.abc.berufsbildendeschulen.at/downloads/lehrplaene-technische-gewerbliche-und-kunstgewerbliche-schulen
 
+
+
+
+
+
 == 2023-09-19
 
 === Ideenfindung zur Projektauswahl
@@ -255,6 +260,7 @@ jobs:
 * im Mikroprojekt eine gh-actions-pipeline erstellen, die eine Java Applikation baut und startet und "Hello World" ausgibt.
 
 == 2023-10-03
+[Al Desoky]
 
 === Automatisierung des Java-Build-Prozesses mit GitHub Actions
 
@@ -267,7 +273,7 @@ jobs:
 
 * Dieser Codeabschnitt führt den Maven-Befehl aus, um ein Java-Projekt im Verzeichnis "backend" zu kompilieren und ein ausführbares Paket zu erstellen. Dabei werden Tests übersprungen *(-DskipTests)*, und der Befehl wird im Batch-Modus *(-B)* ausgeführt, ohne Benutzereingaben zu erwarten.
 
-==== Maven cashen
+==== Maven cachen
 
  uses: actions/setup-java@v3
     with:
