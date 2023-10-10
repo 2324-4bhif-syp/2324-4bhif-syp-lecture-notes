@@ -253,3 +253,35 @@ jobs:
 ==== Hausübung
 
 * im Mikroprojekt eine gh-actions-pipeline erstellen, die eine Java Applikation baut und startet und "Hello World" ausgibt.
+
+== 2023-10-03
+
+=== Automatisierung des Java-Build-Prozesses mit GitHub Actions
+
+==== Ein Maven-Build-Prozess ausführen
+
+ name: Build with Maven
+        run: |
+          mvn -B -DskipTests clean package
+        working-directory: backend
+
+* Dieser Codeabschnitt führt den Maven-Befehl aus, um ein Java-Projekt im Verzeichnis "backend" zu kompilieren und ein ausführbares Paket zu erstellen. Dabei werden Tests übersprungen *(-DskipTests)*, und der Befehl wird im Batch-Modus *(-B)* ausgeführt, ohne Benutzereingaben zu erwarten.
+
+==== Maven cashen
+
+ uses: actions/setup-java@v3
+    with:
+      distribution: 'temurin'
+      cache: 'maven'
+      java-version: '17'
+
+* Hier haben wir die Maven-Abhängigkeiten gecached, um die Build-Zeit zu verkürzen und die Netzwerkbelastung zu reduzieren.
+
+==== Den Inhalt des "target"-Verzeichnisses im "backend" auflisten
+
+     name: list Folder Content
+            run: |
+            ls -l target
+            working-directory: backend
+
+* Dieser Codeabschnitt listet den Inhalt des "target"-Verzeichnisses auf, um zu überprüfen, ob das ausführbare Paket erstellt wurde.
