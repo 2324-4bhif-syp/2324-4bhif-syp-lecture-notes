@@ -556,7 +556,7 @@ pre.rouge .gs {
 <div class="details">
 <span id="author" class="author">Thomas W. Stütz</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2023-09-26</span>
+<span id="revdate">2023-10-10</span>
 <br><span id="revremark">Informationstechnische Projekte</span>
 </div>
 <div id="toc" class="toc2">
@@ -573,6 +573,11 @@ pre.rouge .gs {
 <ul class="sectlevel2">
 <li><a href="#_wiederholung_vorgehensmodelle">3.1. Wiederholung Vorgehensmodelle</a></li>
 <li><a href="#_gh_actions">3.2. gh-actions</a></li>
+</ul>
+</li>
+<li><a href="#_2023_10_03">4. 2023-10-03</a>
+<ul class="sectlevel2">
+<li><a href="#_automatisierung_des_java_build_prozesses_mit_github_actions">4.1. Automatisierung des Java-Build-Prozesses mit GitHub Actions</a></li>
 </ul>
 </li>
 </ul>
@@ -1003,11 +1008,74 @@ The key's randomart image is:
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_2023_10_03"><a class="anchor" href="#_2023_10_03"></a>4. 2023-10-03</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_automatisierung_des_java_build_prozesses_mit_github_actions"><a class="anchor" href="#_automatisierung_des_java_build_prozesses_mit_github_actions"></a>4.1. Automatisierung des Java-Build-Prozesses mit GitHub Actions</h3>
+<div class="sect3">
+<h4 id="_ein_maven_build_prozess_ausführen"><a class="anchor" href="#_ein_maven_build_prozess_ausführen"></a>4.1.1. Ein Maven-Build-Prozess ausführen</h4>
+<div class="literalblock">
+<div class="content">
+<pre>name: Build with Maven
+       run: |
+         mvn -B -DskipTests clean package
+       working-directory: backend</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Dieser Codeabschnitt führt den Maven-Befehl aus, um ein Java-Projekt im Verzeichnis "backend" zu kompilieren und ein ausführbares Paket zu erstellen. Dabei werden Tests übersprungen <strong>(-DskipTests)</strong>, und der Befehl wird im Batch-Modus <strong>(-B)</strong> ausgeführt, ohne Benutzereingaben zu erwarten.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_maven_cashen"><a class="anchor" href="#_maven_cashen"></a>4.1.2. Maven cashen</h4>
+<div class="literalblock">
+<div class="content">
+<pre>uses: actions/setup-java@v3
+   with:
+     distribution: 'temurin'
+     cache: 'maven'
+     java-version: '17'</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hier haben wir die Maven-Abhängigkeiten gecached, um die Build-Zeit zu verkürzen und die Netzwerkbelastung zu reduzieren.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_den_inhalt_des_target_verzeichnisses_im_backend_auflisten"><a class="anchor" href="#_den_inhalt_des_target_verzeichnisses_im_backend_auflisten"></a>4.1.3. Den Inhalt des "target"-Verzeichnisses im "backend" auflisten</h4>
+<div class="literalblock">
+<div class="content">
+<pre>name: list Folder Content
+       run: |
+       ls -l target
+       working-directory: backend</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Dieser Codeabschnitt listet den Inhalt des "target"-Verzeichnisses auf, um zu überprüfen, ob das ausführbare Paket erstellt wurde.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2023-09-26 12:29:37 UTC
+Last updated 2023-10-10 06:50:43 UTC
 </div>
 </div>
 </body>
