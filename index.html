@@ -7,7 +7,7 @@
 <meta name="generator" content="Asciidoctor 2.0.20">
 <meta name="author" content="Thomas W. Stütz">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>Lecture Notes / 23-24 / 4bhif / syp</title>
+<title>Lecture Notes - 23-24 - 4bhif - syp</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -552,7 +552,7 @@ pre.rouge .gs {
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Lecture Notes / 23-24 / 4bhif / syp</h1>
+<h1>Lecture Notes - 23-24 - 4bhif - syp</h1>
 <div class="details">
 <span id="author" class="author">Thomas W. Stütz</span><br>
 <span id="revnumber">version 1.0.0,</span>
@@ -577,7 +577,16 @@ pre.rouge .gs {
 </li>
 <li><a href="#_2023_10_03">4. 2023-10-03</a>
 <ul class="sectlevel2">
-<li><a href="#_automatisierung_des_java_build_prozesses_mit_github_actions">Automatisierung des Java-Build-Prozesses mit GitHub Actions</a></li>
+<li><a href="#_automatisierung_des_java_build_prozesses_mit_github_actions">4.1. Automatisierung des Java-Build-Prozesses mit GitHub Actions</a></li>
+</ul>
+</li>
+<li><a href="#_2023_10_10">5. 2023-10-10</a>
+<ul class="sectlevel2">
+<li><a href="#_struktur_eines_projektverzeichnisses">5.1. Struktur eines Projektverzeichnisses</a></li>
+<li><a href="#_projektteams">5.2. Projektteams</a></li>
+<li><a href="#_scrum">5.3. Scrum</a></li>
+<li><a href="#_mvp_minimum_viable_produkt">5.4. MVP - Minimum Viable Produkt</a></li>
+<li><a href="#_time_boxing">5.5. Time boxing</a></li>
 </ul>
 </li>
 </ul>
@@ -687,8 +696,11 @@ pre.rouge .gs {
 </div>
 <div class="sect2">
 <h3 id="_github_übung_commitpushbranchmergerebase"><a class="anchor" href="#_github_übung_commitpushbranchmergerebase"></a>2.2. Github-Übung - commit/push/branch/merge/rebase</h3>
+<div class="paragraph">
+<p>protokolliert durch Winnie Ilming</p>
+</div>
 <div class="sect3">
-<h4 id="_neues_repo_erstellen"><a class="anchor" href="#_neues_repo_erstellen"></a>Neues repo erstellen</h4>
+<h4 id="_neues_repo_erstellen"><a class="anchor" href="#_neues_repo_erstellen"></a>2.2.1. Neues repo erstellen</h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/create-repo.png" alt="create repo">
@@ -696,7 +708,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_repo_in_der_shell_mit_ssh_klonen"><a class="anchor" href="#_repo_in_der_shell_mit_ssh_klonen"></a>2.2.1. Repo in der shell mit ssh klonen</h4>
+<h4 id="_repo_in_der_shell_mit_ssh_klonen"><a class="anchor" href="#_repo_in_der_shell_mit_ssh_klonen"></a>2.2.2. Repo in der shell mit ssh klonen</h4>
 <div class="paragraph">
 <p>Falls das wegen des fehlenden public keys nicht geht, einen neuen rsa key mit:</p>
 </div>
@@ -774,7 +786,7 @@ The key's randomart image is:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_benutzerdaten_zu_git_hinzufügen"><a class="anchor" href="#_benutzerdaten_zu_git_hinzufügen"></a>2.2.2. Benutzerdaten zu git hinzufügen</h4>
+<h4 id="_benutzerdaten_zu_git_hinzufügen"><a class="anchor" href="#_benutzerdaten_zu_git_hinzufügen"></a>2.2.3. Benutzerdaten zu git hinzufügen</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="bash">git config <span class="nt">--global</span> user.name <span class="o">[</span>username]</code></pre>
@@ -793,7 +805,7 @@ The key's randomart image is:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_java_projekt_erstellen"><a class="anchor" href="#_java_projekt_erstellen"></a>2.2.3. Java Projekt erstellen</h4>
+<h4 id="_java_projekt_erstellen"><a class="anchor" href="#_java_projekt_erstellen"></a>2.2.4. Java Projekt erstellen</h4>
 <div class="paragraph">
 <p>In dem geklonten projekt ein neues maven projekt erstellen</p>
 </div>
@@ -807,7 +819,7 @@ The key's randomart image is:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_eine_änderung_im_projekt_durchführen"><a class="anchor" href="#_eine_änderung_im_projekt_durchführen"></a>2.2.4. Eine Änderung im Projekt durchführen</h4>
+<h4 id="_eine_änderung_im_projekt_durchführen"><a class="anchor" href="#_eine_änderung_im_projekt_durchführen"></a>2.2.5. Eine Änderung im Projekt durchführen</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -829,7 +841,7 @@ The key's randomart image is:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_git_befehle_merge_conflicts"><a class="anchor" href="#_git_befehle_merge_conflicts"></a>2.2.5. Git Befehle (merge conflicts)</h4>
+<h4 id="_git_befehle_merge_conflicts"><a class="anchor" href="#_git_befehle_merge_conflicts"></a>2.2.6. Git Befehle (merge conflicts)</h4>
 <div class="paragraph">
 <p>bei merge conflicts mit rebase lösen</p>
 </div>
@@ -867,7 +879,7 @@ The key's randomart image is:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_feature_branches"><a class="anchor" href="#_feature_branches"></a>2.2.6. Feature Branches</h4>
+<h4 id="_feature_branches"><a class="anchor" href="#_feature_branches"></a>2.2.7. Feature Branches</h4>
 <div class="paragraph">
 <p>einen branch erstellen mit</p>
 </div>
@@ -1011,10 +1023,13 @@ The key's randomart image is:
 <div class="sect1">
 <h2 id="_2023_10_03"><a class="anchor" href="#_2023_10_03"></a>4. 2023-10-03</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Autor: Al Desoky</p>
+</div>
 <div class="sect2">
-<h3 id="_automatisierung_des_java_build_prozesses_mit_github_actions"><a class="anchor" href="#_automatisierung_des_java_build_prozesses_mit_github_actions"></a>Automatisierung des Java-Build-Prozesses mit GitHub Actions</h3>
+<h3 id="_automatisierung_des_java_build_prozesses_mit_github_actions"><a class="anchor" href="#_automatisierung_des_java_build_prozesses_mit_github_actions"></a>4.1. Automatisierung des Java-Build-Prozesses mit GitHub Actions</h3>
 <div class="sect3">
-<h4 id="_ein_maven_build_prozess_ausführen"><a class="anchor" href="#_ein_maven_build_prozess_ausführen"></a>Ein Maven-Build-Prozess ausführen</h4>
+<h4 id="_ein_maven_build_prozess_ausführen"><a class="anchor" href="#_ein_maven_build_prozess_ausführen"></a>4.1.1. Ein Maven-Build-Prozess ausführen</h4>
 <div class="literalblock">
 <div class="content">
 <pre>name: Build with Maven
@@ -1032,7 +1047,7 @@ The key's randomart image is:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_maven_cachen"><a class="anchor" href="#_maven_cachen"></a>Maven cachen</h4>
+<h4 id="_maven_cachen"><a class="anchor" href="#_maven_cachen"></a>4.1.2. Maven cachen</h4>
 <div class="literalblock">
 <div class="content">
 <pre>uses: actions/setup-java@v3
@@ -1051,7 +1066,7 @@ The key's randomart image is:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_den_inhalt_des_target_verzeichnisses_im_backend_auflisten"><a class="anchor" href="#_den_inhalt_des_target_verzeichnisses_im_backend_auflisten"></a>Den Inhalt des "target"-Verzeichnisses im "backend" auflisten</h4>
+<h4 id="_den_inhalt_des_target_verzeichnisses_im_backend_auflisten"><a class="anchor" href="#_den_inhalt_des_target_verzeichnisses_im_backend_auflisten"></a>4.1.3. Den Inhalt des "target"-Verzeichnisses im "backend" auflisten</h4>
 <div class="literalblock">
 <div class="content">
 <pre>name: list Folder Content
@@ -1071,11 +1086,162 @@ The key's randomart image is:
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_2023_10_10"><a class="anchor" href="#_2023_10_10"></a>5. 2023-10-10</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_struktur_eines_projektverzeichnisses"><a class="anchor" href="#_struktur_eines_projektverzeichnisses"></a>5.1. Struktur eines Projektverzeichnisses</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/dirtree.png" alt="dirtree" width="139" height="80">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_projektteams"><a class="anchor" href="#_projektteams"></a>5.2. Projektteams</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Team</th>
+<th class="tableblock halign-left valign-top">Members</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Winnies Baby App</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Ilming Winnie</p>
+</li>
+<li>
+<p>Gruber Moritz</p>
+</li>
+<li>
+<p>Sonnleitner Lukas</p>
+</li>
+<li>
+<p>Berg Bajtik</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schludermann Franklyn</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Schludermann Julian</p>
+</li>
+<li>
+<p>Aichinger Tobias</p>
+</li>
+<li>
+<p>Cvijic Luka</p>
+</li>
+<li>
+<p>Schnalzenberger Arwed</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fröllers kuratierte News-Aggregator mit Themenwahl</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Fröller Felix</p>
+</li>
+<li>
+<p>Lehner David</p>
+</li>
+<li>
+<p>Nikolaus Alexander</p>
+</li>
+<li>
+<p>Cao Anton</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eco-Points</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Nestle Linus</p>
+</li>
+<li>
+<p>Salkovic Armin</p>
+</li>
+<li>
+<p>Daxlinger Oliver</p>
+</li>
+<li>
+<p>Al Desoky Abdullah</p>
+</li>
+<li>
+<p>Mali Laurent</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nuris Mülltrennungsapp</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Nurceski Said</p>
+</li>
+<li>
+<p>Balazs Balint</p>
+</li>
+<li>
+<p>Seifried Erik</p>
+</li>
+<li>
+<p>Breinesberger Markus</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_scrum"><a class="anchor" href="#_scrum"></a>5.3. Scrum</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/scrum-overview.png" alt="scrum overview">
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://www.scrum.org/resources/blog/scrum-auf-einem-blick-scrum-11-schritten-erklart" target="_blank" rel="noopener">Quelle: scrum</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mvp_minimum_viable_produkt"><a class="anchor" href="#_mvp_minimum_viable_produkt"></a>5.4. MVP - Minimum Viable Produkt</h3>
+<div class="paragraph">
+<p>A minimum viable product (MVP) is a version of a product with just enough features to be usable by early customers who can then provide feedback for future product development. <a href="https://en.wikipedia.org/wiki/Minimum_viable_product" target="_blank" rel="noopener">wikipedia</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_time_boxing"><a class="anchor" href="#_time_boxing"></a>5.5. Time boxing</h3>
+<div class="paragraph">
+<p>Timeboxing is a time management technique used in Scrum and Agile project management, where specific tasks are allocated fixed and realistic deadlines. This ensures efficient use of time to complete them within the defined periods, ranging from minutes to weeks or months based on task complexity. <a href="https://timeular.com/blog/timeboxing/" target="_blank" rel="noopener">Timeboxing: Definition, Benefits, and How It Works</a></p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2023-10-10 06:56:00 UTC
+Last updated 2023-10-10 12:12:14 UTC
 </div>
 </div>
 </body>
