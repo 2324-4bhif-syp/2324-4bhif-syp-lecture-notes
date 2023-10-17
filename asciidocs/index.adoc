@@ -381,6 +381,11 @@ Timeboxing is a time management technique used in Scrum and Agile project manage
 
 == 2023-10-17
 
+=== Aufgabenstellung
+
+* Quarkus packagen zu jar-File -> mit script
+* mit docker push in das github package pushen
+
 
 
 
