@@ -367,11 +367,22 @@ https://www.scrum.org/resources/blog/scrum-auf-einem-blick-scrum-11-schritten-er
 
 === MVP - Minimum Viable Produkt
 
-A minimum viable product (MVP) is a version of a product with just enough features to be usable by early customers who can then provide feedback for future product development. https://en.wikipedia.org/wiki/Minimum_viable_product[wikipedia^]
+* A minimum viable product (MVP) is a version of a product with just enough features to be usable by early customers who can then provide feedback for future product development. https://en.wikipedia.org/wiki/Minimum_viable_product[wikipedia^]
+
+* https://www.agile-academy.com/de/product-owner/das-mvp-im-scrum/
+
+image::https://www.agile-academy.com/media/pages/product-owner/das-mvp-im-scrum/66ffbfe1fa-1696599979/das-mvp-in-scrum-min-900x.webp[]
+
 
 === Time boxing
 
 Timeboxing is a time management technique used in Scrum and Agile project management, where specific tasks are allocated fixed and realistic deadlines. This ensures efficient use of time to complete them within the defined periods, ranging from minutes to weeks or months based on task complexity. https://timeular.com/blog/timeboxing/[Timeboxing: Definition, Benefits, and How It Works^]
+
+
+== 2023-10-17
+
+
+
 
 
 
