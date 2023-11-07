@@ -435,3 +435,14 @@ source filename [arguments]
 
 `\\**/*.adoc` ist ein sogenannter "Globbing-Ausdruck", der verwendet wird, um alle Dateien mit der Erweiterung ".adoc" in beliebigen Unterverzeichnissen eines Verzeichnisses zu erfassen.
 Das "\**" repräsentiert "null oder mehr Verzeichnisse", und "*.adoc" steht für alle Dateinamen, die mit irgendetwas beginnen und mit ".adoc" enden.
+
+=== Semantic Commit Messages
+
+https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
+
+bump ... increase version of library, ...
+
+
+=== Neues asciidocs-template
+
+https://github.com/htl-leonding-college/asciidoctor-html-template
