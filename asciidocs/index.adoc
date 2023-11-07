@@ -386,10 +386,55 @@ Timeboxing is a time management technique used in Scrum and Agile project manage
 * Quarkus packagen zu jar-File -> mit script
 * mit docker push in das github package pushen
 
+==  2023-11-07
 
+=== GitHub Action
 
+==== Jobs vs. Steps
 
-== 2023-11-07
+Der Unterschied zwischen Jobs und Steps ist, dass Jobs gleichzeitig ablaufen und Steps hintereinander.
+
+==== GitHub Runner
+
+In der Cloud läuft eine virtuelle Maschine mit dem angegebenen Betriebssystem.
+
+Das OS für den Runner kann wie folgt angegeben werden:
+
+----
+runs-on: ${{OS}}
+----
+
+Beispielsweise kann man `ubuntu-latest` verwenden.
+
+==== Checkout
+
+----
+- uses: actions/checkout@v6
+----
+
+Dieser Befehlt kopiert alle Dateien/Ordner aus dem weiter oben angegebenen Branch des Repositorys in die virtuelle Maschine auf der die Action ausgeführt wird.
+
+=== Bash `source`
+
+Der `source`-Command liest und führt Befehle aus der Datei aus, die als Argument in der aktuellen Shell-Umgebung angegeben ist.
+Es ist nützlich, um Funktionen, Variablen und Konfigurationsdateien in Shell-Skripte zu laden.
+
+==== Syntax
+
+[source,bash]
+----
+source filename [arguments]
+----
+
+==== Der Unterschied zwischen `./` und `source`
+
+* `./script` führt das Skript als ausführbare Datei aus und startet eine neue Shell, um es auszuführen.
+* `source script` liest und führt Befehle aus der Datei `script` in der aktuellen Shell-Umgebung aus.
+
+=== Globbing
+
+`\\**/*.adoc` ist ein sogenannter "Globbing-Ausdruck", der verwendet wird, um alle Dateien mit der Erweiterung ".adoc" in beliebigen Unterverzeichnissen eines Verzeichnisses zu erfassen.
+Das "\**" repräsentiert "null oder mehr Verzeichnisse", und "*.adoc" steht für alle Dateinamen, die mit irgendetwas beginnen und mit ".adoc" enden.
 
 === Semantic Commit Messages
 
@@ -401,4 +446,3 @@ bump ... increase version of library, ...
 === Neues asciidocs-template
 
 https://github.com/htl-leonding-college/asciidoctor-html-template
-
