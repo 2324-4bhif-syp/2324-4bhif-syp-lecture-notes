@@ -596,8 +596,11 @@ pre.rouge .gs {
 </li>
 <li><a href="#_2023_11_07">7. 2023-11-07</a>
 <ul class="sectlevel2">
-<li><a href="#_semantic_commit_messages">7.1. Semantic Commit Messages</a></li>
-<li><a href="#_neues_asciidocs_template">7.2. Neues asciidocs-template</a></li>
+<li><a href="#_github_action">7.1. GitHub Action</a></li>
+<li><a href="#_bash_source">7.2. Bash <code>source</code></a></li>
+<li><a href="#_globbing">7.3. Globbing</a></li>
+<li><a href="#_semantic_commit_messages">7.4. Semantic Commit Messages</a></li>
+<li><a href="#_neues_asciidocs_template">7.5. Neues asciidocs-template</a></li>
 </ul>
 </li>
 </ul>
@@ -1282,7 +1285,79 @@ The key's randomart image is:
 <h2 id="_2023_11_07"><a class="anchor" href="#_2023_11_07"></a>7. 2023-11-07</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_semantic_commit_messages"><a class="anchor" href="#_semantic_commit_messages"></a>7.1. Semantic Commit Messages</h3>
+<h3 id="_github_action"><a class="anchor" href="#_github_action"></a>7.1. GitHub Action</h3>
+<div class="sect3">
+<h4 id="_jobs_vs_steps"><a class="anchor" href="#_jobs_vs_steps"></a>7.1.1. Jobs vs. Steps</h4>
+<div class="paragraph">
+<p>Der Unterschied zwischen Jobs und Steps ist, dass Jobs gleichzeitig ablaufen und Steps hintereinander.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_github_runner"><a class="anchor" href="#_github_runner"></a>7.1.2. GitHub Runner</h4>
+<div class="paragraph">
+<p>In der Cloud läuft eine virtuelle Maschine mit dem angegebenen Betriebssystem.</p>
+</div>
+<div class="paragraph">
+<p>Das OS für den Runner kann wie folgt angegeben werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>runs-on: ${{OS}}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Beispielsweise kann man <code>ubuntu-latest</code> verwenden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_checkout"><a class="anchor" href="#_checkout"></a>7.1.3. Checkout</h4>
+<div class="listingblock">
+<div class="content">
+<pre>- uses: actions/checkout@v6</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dieser Befehlt kopiert alle Dateien/Ordner aus dem weiter oben angegebenen Branch des Repositorys in die virtuelle Maschine auf der die Action ausgeführt wird.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bash_source"><a class="anchor" href="#_bash_source"></a>7.2. Bash <code>source</code></h3>
+<div class="paragraph">
+<p>Der <code>source</code>-Command liest und führt Befehle aus der Datei aus, die als Argument in der aktuellen Shell-Umgebung angegeben ist.
+Es ist nützlich, um Funktionen, Variablen und Konfigurationsdateien in Shell-Skripte zu laden.</p>
+</div>
+<div class="sect3">
+<h4 id="_syntax"><a class="anchor" href="#_syntax"></a>7.2.1. Syntax</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash"><span class="nb">source </span>filename <span class="o">[</span>arguments]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_der_unterschied_zwischen_und_source"><a class="anchor" href="#_der_unterschied_zwischen_und_source"></a>7.2.2. Der Unterschied zwischen <code>./</code> und <code>source</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>./script</code> führt das Skript als ausführbare Datei aus und startet eine neue Shell, um es auszuführen.</p>
+</li>
+<li>
+<p><code>source script</code> liest und führt Befehle aus der Datei <code>script</code> in der aktuellen Shell-Umgebung aus.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_globbing"><a class="anchor" href="#_globbing"></a>7.3. Globbing</h3>
+<div class="paragraph">
+<p><code>**/*.adoc</code> ist ein sogenannter "Globbing-Ausdruck", der verwendet wird, um alle Dateien mit der Erweiterung ".adoc" in beliebigen Unterverzeichnissen eines Verzeichnisses zu erfassen.
+Das "**" repräsentiert "null oder mehr Verzeichnisse", und "*.adoc" steht für alle Dateinamen, die mit irgendetwas beginnen und mit ".adoc" enden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_semantic_commit_messages"><a class="anchor" href="#_semantic_commit_messages"></a>7.4. Semantic Commit Messages</h3>
 <div class="paragraph">
 <p><a href="https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716" class="bare">https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716</a></p>
 </div>
@@ -1291,7 +1366,7 @@ The key's randomart image is:
 </div>
 </div>
 <div class="sect2">
-<h3 id="_neues_asciidocs_template"><a class="anchor" href="#_neues_asciidocs_template"></a>7.2. Neues asciidocs-template</h3>
+<h3 id="_neues_asciidocs_template"><a class="anchor" href="#_neues_asciidocs_template"></a>7.5. Neues asciidocs-template</h3>
 <div class="paragraph">
 <p><a href="https://github.com/htl-leonding-college/asciidoctor-html-template" class="bare">https://github.com/htl-leonding-college/asciidoctor-html-template</a></p>
 </div>
@@ -1302,7 +1377,7 @@ The key's randomart image is:
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2023-11-07 20:10:02 UTC
+Last updated 2023-11-07 20:22:35 UTC
 </div>
 </div>
 </body>
