@@ -446,3 +446,25 @@ bump ... increase version of library, ...
 === Neues asciidocs-template
 
 https://github.com/htl-leonding-college/asciidoctor-html-template
+
+
+== 2023-11-28
+
+* https://google.github.io/styleguide/javaguide.html[Google Style Guide^]
+
+* Asciidoctor Preamble
+
+[source,asciidoc]
+----
+ = 4bhif - SEW - 1.Leistungsfeststellung
+ :icons: font
+ :experimental:
+ ifndef::imagesdir[:imagesdir: images]
+ ifdef::env-github[]
+ :tip-caption: :bulb:
+ :note-caption: :information_source:
+ :important-caption: :heavy_exclamation_mark:
+ :caution-caption: :fire:
+ :warning-caption: :warning:
+ endif::[]
+----
