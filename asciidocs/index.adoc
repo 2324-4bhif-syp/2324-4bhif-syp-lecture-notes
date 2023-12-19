@@ -468,3 +468,40 @@ https://github.com/htl-leonding-college/asciidoctor-html-template
  :warning-caption: :warning:
  endif::[]
 ----
+
+
+== 2023-12-19
+
+=== Test-Driven-Development
+
+
+https://medium.com/sahibinden-technology/package-by-layer-vs-package-by-feature-7e89cde2ae3a[Package by Layer vs Package by Feature^]
+
+=== Anforderungen an Tests
+
+==== Tests müssen reproduzierbar und unabhängig sein
+
+* Setup und TearDown Methoden
+
+
+==== Abdeckungsgrad
+
+* Das Builder Pattern ermöglicht einen hohen Abdeckungsgrad.
+
+* Beim Builder-Pattern wird immer nur ein Typ (Klasse) erzeugt.
+
+* https://github.com/caberger/unit-test-assignment[^]
+
+* https://dev.to/pavanbelagatti/learn-how-to-setup-a-cicd-pipeline-from-scratch-for-a-go-application-4m69[Learn How to Setup a CI/CD Pipeline from Scratch^]
+
+
+=== Reactive Extensions
+
+* https://rxmarbles.com/
+
+* https://redux.js.org/understanding/thinking-in-redux/three-principles[]
+** Single source of truth
+** State is read-only
+** Changes are made with pure functions
+
+
