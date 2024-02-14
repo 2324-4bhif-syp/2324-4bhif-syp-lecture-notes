@@ -505,3 +505,56 @@ https://medium.com/sahibinden-technology/package-by-layer-vs-package-by-feature-
 ** Changes are made with pure functions
 
 
+== 2024-02-13
+
+image::rollierendes-logging.png[]
+
+
+image::leoenergy-demo-data-server.png[]
+
+
+=== Kubernetes
+
+==== Lokale k8s
+
+* Minikube
+* kind
+* k3s
+
+==== Geschichte der Containerisierung
+
+* Docker hat eine Revolution in der Softwareentwicklung
+
+* Ein Docker - Container hat folgende Vorteile
+** Man ist unabhängig von der Umgebung
+** Man kann zB mehrere Versionen einer DB parallel laufen lassen.
+
+* Orchestrierung - mehrere Docker-Container werden koordiniert
+** docker-compose
+
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s_o8dwzRlu4?si=V3cVgGer7gxtg9xn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+++++
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
