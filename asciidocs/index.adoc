@@ -537,6 +537,50 @@ image::leoenergy-demo-data-server.png[]
 <iframe width="560" height="315" src="https://www.youtube.com/embed/s_o8dwzRlu4?si=V3cVgGer7gxtg9xn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ++++
 
+== 2024-03-04
+
+=== Begrifflichkeiten Kubernetes
+
+* Node: Computer
+
+* Controller (Control Pane):
+** scheduled, löscht und erstellt Pods
+** verschiebt die Nodes
+
+* Services:
+** sorgt dafür, dass die einzelnen Pods erreichbar sind
+** permanente IP-Adresse
+
+* Pod:
+** so ähnlich wie ein Container -> hat mehr Metainformationen, damit Kubernetes besser arbeiten kann
+** können mehrere Container haben
+** bekommen eine eigene IP-Adresse
+** ephemeral, d.h. kurzlebig
+
+* Deployment: Endergebnis (Wunsch) -> deklarativ
+** z.B. 2 Replicas eines Pods. Controller setzt diesen Wunsch um
+
+* Persistent Volume Claim (PVC): In der Cloud wird Speicherplatz reserviert
+
+* Volume:
+** Speicher darf nach dem Verschieben eines Pods auf einen anderen Node nicht gelöscht werden (wie mit einem USB-Stick)
+** Im Volume wird der PVC referenziert.
+
+* Ingress:
+** verweist auf einen Service, (Services sind intern)
+** erhält Zugriff auf diesem Service von außen
+
+* Config Map: Key-Value-Store, wo man die Konfigurationsdaten speichert
+
+* Secret Map: mit base 64 codiert, für vertrauliche Informationen wie Passwörter
+
+==== Unterschied zwischen deklarativ & imperativ
+
+* deklarativ: beschreibt, was erreicht werden soll, ohne den genauen Ablaufschritt anzugeben
+** z.B. SQL -> man will Daten abrufen oder manipulieren, aber man gibt keinen Algorithmus an
+* imperativ: beschreibt explizit den Ablauf von Schritten, um ein bestimmtes Ziel zu erreichen
+** z.B. Java, C#
+
 
 
 
