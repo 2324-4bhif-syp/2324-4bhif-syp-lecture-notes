@@ -574,3 +574,74 @@ This makes it easier to maintain and change the system.
 ==== Cohesion and Coupling
 
 image::cohesion-and-coupling.png[Cohesion and Coupling]
+
+=== BuildX
+
+BuildX serves as a CLI plugin for Docker, elevating the Docker CLI's capabilities by enabling the creation, execution, and distribution of multi-platform images.
+The tool creates the possibility to develop and deploy applications across diverse hardware architectures seamlessly.
+
+For instance, consider a scenario where you are operating on an ARM system but intend to run your application utilizing GitHub-Runner, which typically runs on x86 architecture.
+BuildX facilitates this process by allowing you to build the image tailored specifically for the x86 architecture, ensuring compatibility and smooth execution on the desired platform.
+
+=== Commit Message Conventions
+
+----
+<type>: <short summary>
+----
+
+|===
+| Type | Summary
+
+| build | Changes affecting the build system or external dependencies.
+| ci | Changes to CI configuration files and scripts.
+| docs | Documentation-only changes.
+| feat | Introduction of a new feature.
+| fix | Bug fixes.
+| perf | Code changes to enhance performance.
+| refactor | Code changes that neither fix a bug nor add a feature.
+| test | Addition or correction of tests.
+|===
+
+=== Cloud Computing
+
+It does *not* mean that you rent a server somewhere and host it there.
+A cloud is a network of servers, and you use these servers to run your applications.
+
+=== Security in Web Applications
+
+Cookies and JWTs are both used in web applications for security purposes such as authentication and authorization.
+Cookies are typically used for session management, while JWTs are commonly used for stateless authentication.
+
+==== HTTP-Cookies
+
+Cookies are small pieces of data stored on the client's browser.
+They can be used to maintain session state, such as user authentication and authorization information.
+In the context of security, cookies can store session identifiers or tokens that authenticate the user's session with the server.
+
+==== Json Web Token (JWT)
+
+JWTs are self-contained tokens that consist of three parts: Header, Payload, and Signature.
+They are often used for authentication and authorization in web applications.
+The payload of a JWT typically contains information about the user and their permissions.
+JWTs are signed by the server, allowing the server to verify the authenticity of the token and ensure that it has not been tampered with.
+JWTs are commonly used for stateless authentication, meaning that the server does not need to store session state on the server-side, which can improve scalability.
+
+It is rarely implemented manually but mostly handled by a library, such as Keycloak, for example.
+
+===== Bearer Token
+
+A Bearer token is a type of token used for authentication and authorization and is used in web applications and APIs to hold user credentials and indicate authorization for requests and access.
+
+===== Refresh Token
+
+A refresh token is a special kind of token that can be used to obtain a renewed access token.
+
+==== Keycloak
+
+Keycloak is an open-source identity and access management solution that makes it easy to secure applications and services with little to no code.
+The login data should be directly used from the Keycloak server.
+The backend of the application must not store any login data.
+
+===== Logout
+
+To log out, you need to use the Logout Endpoint / Logout-URL of the Keycloak server.
