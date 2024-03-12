@@ -48,17 +48,21 @@ ifdef::backend-html5[]
 ** Fröllers kuratierte News-Aggregator mit Themenwahl
 ** Eco-Points:
 *** OBD-Sensordaten auslesen (ELM327)
-*** ev. GPS-Position erfassen
+*** ev.
+GPS-Position erfassen
 *** Die Fahrprofile auf Umweltfreundlichkeit beurteilen
 *** Es werden Eco-Points ermittelt -> als Game miteinander vergleichen
-*** ev. Plattform mit (anonymisierten) Eco-Points Ranking
+*** ev.
+Plattform mit (anonymisierten) Eco-Points Ranking
 *** Car Play Anbindung -> iOS, Android
 ** Nuris Mülltrennungsapp
 *** EAN-Codes von Produkten einlesen und anschließend ausgeben, wohin die Verpackung entsorgt werden muss
-*** Problem: Man braucht eine EAN-Code-Produktdatenbank. Die sind meist kostenpflichtig.
+*** Problem: Man braucht eine EAN-Code-Produktdatenbank.
+Die sind meist kostenpflichtig.
 *** Es ist zu überprüfen, ob aufgrund einer solchen Datenbank festgestellt werden kann, welches Verpackungsmaterial verwendet wurde
 
 === Github-Übung - commit/push/branch/merge/rebase
+
 protokolliert durch Winnie Ilming
 
 ==== Neues repo erstellen
@@ -69,7 +73,7 @@ image::create-repo.png[]
 
 Falls das wegen des fehlenden public keys nicht geht, einen neuen rsa key mit:
 
-[source, bash]
+[source,bash]
 ----
 ssh-keygen -t rsa
 ----
@@ -115,20 +119,20 @@ image::add-key.png[]
 
 image::add-new-ssh-key.png[]
 
-
 ==== Benutzerdaten zu git hinzufügen
 
-[source, bash]
+[source,bash]
 ----
 git config --global user.name [username]
 ----
 
 die primary Email in github durch settings > emails herausfinden und in
 
-[source, bash]
+[source,bash]
 ----
 git config --global user.email [email]
 ----
+
 einsetzen
 
 ==== Java Projekt erstellen
@@ -140,34 +144,39 @@ image::create-project.png[]
 als group die umgekehrte Firmendomäne eingeben, in diesem Fall `at.htlleonding` (Leider sind keine Bindestriche erlaubt).
 
 ==== Eine Änderung im Projekt durchführen
+
 * Eine neue README File erstellen und dann das Projekt committen mit der message "Initial commit"
 * Das repo pushen
 * Einen Partner in sein Projekt einladen
 * mit intellij die pom.xml als projekt öffnen
 * nachdem der Partner jetzt einen commit gepusht hat, kann man mit git pull das lokale repository updaten
 
-
 ==== Git Befehle (merge conflicts)
+
 bei merge conflicts mit rebase lösen
 
-[source, bash]
+[source,bash]
 ----
 git pull --rebase
 ----
 
 oder mit merge
 
-[source, bash]
+[source,bash]
 ----
 git pull --no-rebase
 ----
+
 falls noch nicht committed wurde, kann durch
-[source, bash]
+
+[source,bash]
 ----
 git stash
 ----
+
 die momentane Arbeit in einem eigenen Bereich verborgen werden um sie nach dem erfolgreichen Pull mit
-[source, bash]
+
+[source,bash]
 ----
 git stash pop
 ----
@@ -178,29 +187,36 @@ wieder in die Codebasis zu integrieren.
 
 einen branch erstellen mit
 
-[source, bash]
+[source,bash]
 ----
 git branch [branchname]
 ----
+
 oder erstellen und gleich wechseln
-[source, bash]
+
+[source,bash]
 ----
 git checkout -b [branchname]
 ----
+
 einen Branch wechseln
-[source, bash]
+
+[source,bash]
 ----
 git switch [branchname]
 ----
 
 Bei Arbeiten auf einem feature branch immer wieder mit
-[source, bash]
+
+[source,bash]
 ----
 git (merge/rebase) main
 ----
+
 den aktuellen stand des main branches auf den feature branch bringen
 
-Wenn das Feature fertig gebaut wurde, muss der Branch wieder mit dem main branch gemerged werden. Dies kann durch manuelles mergen oder durch einen pull request stattfinden.
+Wenn das Feature fertig gebaut wurde, muss der Branch wieder mit dem main branch gemerged werden.
+Dies kann durch manuelles mergen oder durch einen pull request stattfinden.
 
 == 2023-09-26
 
@@ -259,8 +275,8 @@ jobs:
 
 * im Mikroprojekt eine gh-actions-pipeline erstellen, die eine Java Applikation baut und startet und "Hello World" ausgibt.
 
-
 == 2023-10-03
+
 Autor: Al Desoky
 
 === Automatisierung des Java-Build-Prozesses mit GitHub Actions
@@ -272,7 +288,8 @@ Autor: Al Desoky
           mvn -B -DskipTests clean package
         working-directory: backend
 
-* Dieser Codeabschnitt führt den Maven-Befehl aus, um ein Java-Projekt im Verzeichnis "backend" zu kompilieren und ein ausführbares Paket zu erstellen. Dabei werden Tests übersprungen *(-DskipTests)*, und der Befehl wird im Batch-Modus *(-B)* ausgeführt, ohne Benutzereingaben zu erwarten.
+* Dieser Codeabschnitt führt den Maven-Befehl aus, um ein Java-Projekt im Verzeichnis "backend" zu kompilieren und ein ausführbares Paket zu erstellen.
+Dabei werden Tests übersprungen *(-DskipTests)*, und der Befehl wird im Batch-Modus *(-B)* ausgeführt, ohne Benutzereingaben zu erwarten.
 
 ==== Maven cachen
 
@@ -293,7 +310,6 @@ Autor: Al Desoky
 
 * Dieser Codeabschnitt listet den Inhalt des "target"-Verzeichnisses auf, um zu überprüfen, ob das ausführbare Paket erstellt wurde.
 
-
 == 2023-10-10
 
 === Struktur eines Projektverzeichnisses
@@ -312,7 +328,6 @@ Autor: Al Desoky
 }
 @endsalt
 ----
-
 
 === Projektteams
 
@@ -373,11 +388,10 @@ https://www.scrum.org/resources/blog/scrum-auf-einem-blick-scrum-11-schritten-er
 
 image::https://www.agile-academy.com/media/pages/product-owner/das-mvp-im-scrum/66ffbfe1fa-1696599979/das-mvp-in-scrum-min-900x.webp[]
 
-
 === Time boxing
 
-Timeboxing is a time management technique used in Scrum and Agile project management, where specific tasks are allocated fixed and realistic deadlines. This ensures efficient use of time to complete them within the defined periods, ranging from minutes to weeks or months based on task complexity. https://timeular.com/blog/timeboxing/[Timeboxing: Definition, Benefits, and How It Works^]
-
+Timeboxing is a time management technique used in Scrum and Agile project management, where specific tasks are allocated fixed and realistic deadlines.
+This ensures efficient use of time to complete them within the defined periods, ranging from minutes to weeks or months based on task complexity. https://timeular.com/blog/timeboxing/[Timeboxing: Definition, Benefits, and How It Works^]
 
 == 2023-10-17
 
@@ -442,11 +456,9 @@ https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
 
 bump ... increase version of library, ...
 
-
 === Neues asciidocs-template
 
 https://github.com/htl-leonding-college/asciidoctor-html-template
-
 
 == 2023-11-28
 
@@ -469,11 +481,9 @@ https://github.com/htl-leonding-college/asciidoctor-html-template
  endif::[]
 ----
 
-
 == 2023-12-19
 
 === Test-Driven-Development
-
 
 https://medium.com/sahibinden-technology/package-by-layer-vs-package-by-feature-7e89cde2ae3a[Package by Layer vs Package by Feature^]
 
@@ -482,7 +492,6 @@ https://medium.com/sahibinden-technology/package-by-layer-vs-package-by-feature-
 ==== Tests müssen reproduzierbar und unabhängig sein
 
 * Setup und TearDown Methoden
-
 
 ==== Abdeckungsgrad
 
@@ -494,7 +503,6 @@ https://medium.com/sahibinden-technology/package-by-layer-vs-package-by-feature-
 
 * https://dev.to/pavanbelagatti/learn-how-to-setup-a-cicd-pipeline-from-scratch-for-a-go-application-4m69[Learn How to Setup a CI/CD Pipeline from Scratch^]
 
-
 === Reactive Extensions
 
 * https://rxmarbles.com/
@@ -503,7 +511,6 @@ https://medium.com/sahibinden-technology/package-by-layer-vs-package-by-feature-
 ** Single source of truth
 ** State is read-only
 ** Changes are made with pure functions
-
 
 == 2024-02-13
 
@@ -537,24 +544,33 @@ image::leoenergy-demo-data-server.png[]
 <iframe width="560" height="315" src="https://www.youtube.com/embed/s_o8dwzRlu4?si=V3cVgGer7gxtg9xn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ++++
 
+== 2024-03-12
 
+=== Microservices
 
+IMPORTANT: A monolith should be used *unless* there is a reason to use microservices.
 
+==== Definition
 
+Microservices are an architectural and organizational approach to software development
+where software is composed of small independent services that communicate over well-defined APIs.
+These services are owned by small, self-contained teams.
 
+image::monolith-vs-microservices.png[Monolith vs. Microservices]
 
+==== Resilience
 
+image::resilience.png[Resilience]
 
+If a service is down, the whole system should still work.
+Important for services like Netflix.
 
+==== Complexity & Maintenance
 
+If you have a giant monolith, you have to understand the whole system to make changes.
+With microservices, you only have to understand the service you are working on.
+This makes it easier to maintain and change the system.
 
+==== Cohesion and Coupling
 
-
-
-
-
-
-
-
-
-
+image::cohesion-and-coupling.png[Cohesion and Coupling]
