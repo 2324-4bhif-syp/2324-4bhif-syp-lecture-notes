@@ -386,8 +386,7 @@ image::https://www.agile-academy.com/media/pages/product-owner/das-mvp-im-scrum/
 
 === Time boxing
 
-Timeboxing is a time management technique used in Scrum and Agile project management,
-where specific tasks are allocated fixed and realistic deadlines.
+Timeboxing is a time management technique used in Scrum and Agile project management, where specific tasks are allocated fixed and realistic deadlines.
 This ensures efficient use of time to complete them within the defined periods,
 ranging from minutes to weeks or months based on task complexity.
 Timeboxing: Definition, Benefits, and How It Works^]
