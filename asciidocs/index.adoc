@@ -59,6 +59,7 @@ ifdef::backend-html5[]
 *** Es ist zu überprüfen, ob aufgrund einer solchen Datenbank festgestellt werden kann, welches Verpackungsmaterial verwendet wurde
 
 === Github-Übung - commit/push/branch/merge/rebase
+
 protokolliert durch Winnie Ilming
 
 ==== Neues repo erstellen
@@ -69,7 +70,7 @@ image::create-repo.png[]
 
 Falls das wegen des fehlenden public keys nicht geht, einen neuen rsa key mit:
 
-[source, bash]
+[source,bash]
 ----
 ssh-keygen -t rsa
 ----
@@ -115,20 +116,20 @@ image::add-key.png[]
 
 image::add-new-ssh-key.png[]
 
-
 ==== Benutzerdaten zu git hinzufügen
 
-[source, bash]
+[source,bash]
 ----
 git config --global user.name [username]
 ----
 
 die primary Email in github durch settings > emails herausfinden und in
 
-[source, bash]
+[source,bash]
 ----
 git config --global user.email [email]
 ----
+
 einsetzen
 
 ==== Java Projekt erstellen
@@ -140,34 +141,39 @@ image::create-project.png[]
 als group die umgekehrte Firmendomäne eingeben, in diesem Fall `at.htlleonding` (Leider sind keine Bindestriche erlaubt).
 
 ==== Eine Änderung im Projekt durchführen
+
 * Eine neue README File erstellen und dann das Projekt committen mit der message "Initial commit"
 * Das repo pushen
 * Einen Partner in sein Projekt einladen
 * mit intellij die pom.xml als projekt öffnen
 * nachdem der Partner jetzt einen commit gepusht hat, kann man mit git pull das lokale repository updaten
 
-
 ==== Git Befehle (merge conflicts)
+
 bei merge conflicts mit rebase lösen
 
-[source, bash]
+[source,bash]
 ----
 git pull --rebase
 ----
 
 oder mit merge
 
-[source, bash]
+[source,bash]
 ----
 git pull --no-rebase
 ----
+
 falls noch nicht committed wurde, kann durch
-[source, bash]
+
+[source,bash]
 ----
 git stash
 ----
+
 die momentane Arbeit in einem eigenen Bereich verborgen werden um sie nach dem erfolgreichen Pull mit
-[source, bash]
+
+[source,bash]
 ----
 git stash pop
 ----
@@ -178,29 +184,36 @@ wieder in die Codebasis zu integrieren.
 
 einen branch erstellen mit
 
-[source, bash]
+[source,bash]
 ----
 git branch [branchname]
 ----
+
 oder erstellen und gleich wechseln
-[source, bash]
+
+[source,bash]
 ----
 git checkout -b [branchname]
 ----
+
 einen Branch wechseln
-[source, bash]
+
+[source,bash]
 ----
 git switch [branchname]
 ----
 
 Bei Arbeiten auf einem feature branch immer wieder mit
-[source, bash]
+
+[source,bash]
 ----
 git (merge/rebase) main
 ----
+
 den aktuellen stand des main branches auf den feature branch bringen
 
-Wenn das Feature fertig gebaut wurde, muss der Branch wieder mit dem main branch gemerged werden. Dies kann durch manuelles mergen oder durch einen pull request stattfinden.
+Wenn das Feature fertig gebaut wurde, muss der Branch wieder mit dem main branch gemerged werden.
+Dies kann durch manuelles mergen oder durch einen pull request stattfinden.
 
 == 2023-09-26
 
@@ -259,8 +272,8 @@ jobs:
 
 * im Mikroprojekt eine gh-actions-pipeline erstellen, die eine Java Applikation baut und startet und "Hello World" ausgibt.
 
-
 == 2023-10-03
+
 Autor: Al Desoky
 
 === Automatisierung des Java-Build-Prozesses mit GitHub Actions
@@ -293,7 +306,6 @@ Autor: Al Desoky
 
 * Dieser Codeabschnitt listet den Inhalt des "target"-Verzeichnisses auf, um zu überprüfen, ob das ausführbare Paket erstellt wurde.
 
-
 == 2023-10-10
 
 === Struktur eines Projektverzeichnisses
@@ -312,7 +324,6 @@ Autor: Al Desoky
 }
 @endsalt
 ----
-
 
 === Projektteams
 
@@ -373,11 +384,12 @@ https://www.scrum.org/resources/blog/scrum-auf-einem-blick-scrum-11-schritten-er
 
 image::https://www.agile-academy.com/media/pages/product-owner/das-mvp-im-scrum/66ffbfe1fa-1696599979/das-mvp-in-scrum-min-900x.webp[]
 
-
 === Time boxing
 
-Timeboxing is a time management technique used in Scrum and Agile project management, where specific tasks are allocated fixed and realistic deadlines. This ensures efficient use of time to complete them within the defined periods, ranging from minutes to weeks or months based on task complexity. https://timeular.com/blog/timeboxing/[Timeboxing: Definition, Benefits, and How It Works^]
-
+Timeboxing is a time management technique used in Scrum and Agile project management, where specific tasks are allocated fixed and realistic deadlines.
+This ensures efficient use of time to complete them within the defined periods,
+ranging from minutes to weeks or months based on task complexity.
+Timeboxing: Definition, Benefits, and How It Works^]
 
 == 2023-10-17
 
@@ -442,11 +454,9 @@ https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
 
 bump ... increase version of library, ...
 
-
 === Neues asciidocs-template
 
 https://github.com/htl-leonding-college/asciidoctor-html-template
-
 
 == 2023-11-28
 
@@ -469,11 +479,9 @@ https://github.com/htl-leonding-college/asciidoctor-html-template
  endif::[]
 ----
 
-
 == 2023-12-19
 
 === Test-Driven-Development
-
 
 https://medium.com/sahibinden-technology/package-by-layer-vs-package-by-feature-7e89cde2ae3a[Package by Layer vs Package by Feature^]
 
@@ -482,7 +490,6 @@ https://medium.com/sahibinden-technology/package-by-layer-vs-package-by-feature-
 ==== Tests müssen reproduzierbar und unabhängig sein
 
 * Setup und TearDown Methoden
-
 
 ==== Abdeckungsgrad
 
@@ -494,7 +501,6 @@ https://medium.com/sahibinden-technology/package-by-layer-vs-package-by-feature-
 
 * https://dev.to/pavanbelagatti/learn-how-to-setup-a-cicd-pipeline-from-scratch-for-a-go-application-4m69[Learn How to Setup a CI/CD Pipeline from Scratch^]
 
-
 === Reactive Extensions
 
 * https://rxmarbles.com/
@@ -503,7 +509,6 @@ https://medium.com/sahibinden-technology/package-by-layer-vs-package-by-feature-
 ** Single source of truth
 ** State is read-only
 ** Changes are made with pure functions
-
 
 == 2024-02-13
 
@@ -537,24 +542,104 @@ image::leoenergy-demo-data-server.png[]
 <iframe width="560" height="315" src="https://www.youtube.com/embed/s_o8dwzRlu4?si=V3cVgGer7gxtg9xn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ++++
 
+== 2024-03-12
 
+=== Microservices
 
+IMPORTANT: A monolith should be used *unless* there is a reason to use microservices.
 
+==== Definition
 
+Microservices are an architectural and organizational approach to software development
+where software is composed of small independent services that communicate over well-defined APIs.
+These services are owned by small, self-contained teams.
 
+image::monolith-vs-microservices.png[Monolith vs. Microservices]
 
+==== Resilience
 
+image::resilience.png[Resilience]
 
+If a service is down, the whole system should still work.
+Important for services like Netflix.
 
+==== Complexity & Maintenance
 
+If you have a giant monolith, you have to understand the whole system to make changes.
+With microservices, you only have to understand the service you are working on.
+This makes it easier to maintain and change the system.
 
+==== Cohesion and Coupling
 
+image::cohesion-and-coupling.png[Cohesion and Coupling]
 
+=== BuildX
 
+BuildX serves as a CLI plugin for Docker, elevating the Docker CLI's capabilities by enabling the creation, execution, and distribution of multi-platform images.
+The tool creates the possibility to develop and deploy applications across diverse hardware architectures seamlessly.
 
+For instance, consider a scenario where you are operating on an ARM system but intend to run your application utilizing GitHub-Runner, which typically runs on x86 architecture.
+BuildX facilitates this process by allowing you to build the image tailored specifically for the x86 architecture, ensuring compatibility and smooth execution on the desired platform.
 
+=== Commit Message Conventions
 
+----
+<type>: <short summary>
+----
 
+|===
+| Type | Summary
 
+| build | Changes affecting the build system or external dependencies.
+| ci | Changes to CI configuration files and scripts.
+| docs | Documentation-only changes.
+| feat | Introduction of a new feature.
+| fix | Bug fixes.
+| perf | Code changes to enhance performance.
+| refactor | Code changes that neither fix a bug nor add a feature.
+| test | Addition or correction of tests.
+|===
 
+=== Cloud Computing
 
+It does *not* mean that you rent a server somewhere and host it there.
+A cloud is a network of servers, and you use these servers to run your applications.
+
+=== Security in Web Applications
+
+Cookies and JWTs are both used in web applications for security purposes such as authentication and authorization.
+Cookies are typically used for session management, while JWTs are commonly used for stateless authentication.
+
+==== HTTP-Cookies
+
+Cookies are small pieces of data stored on the client's browser.
+They can be used to maintain session state, such as user authentication and authorization information.
+In the context of security, cookies can store session identifiers or tokens that authenticate the user's session with the server.
+
+==== Json Web Token (JWT)
+
+JWTs are self-contained tokens that consist of three parts: Header, Payload, and Signature.
+They are often used for authentication and authorization in web applications.
+The payload of a JWT typically contains information about the user and their permissions.
+JWTs are signed by the server, allowing the server to verify the authenticity of the token and ensure that it has not been tampered with.
+JWTs are commonly used for stateless authentication, meaning that the server does not need to store session state on the server-side, which can improve scalability.
+
+It is rarely implemented manually but mostly handled by a library, such as Keycloak, for example.
+
+===== Bearer Token
+
+A Bearer token is a type of token used for authentication and authorization and is used in web applications and APIs to hold user credentials and indicate authorization for requests and access.
+
+===== Refresh Token
+
+A refresh token is a special kind of token that can be used to obtain a renewed access token.
+
+==== Keycloak
+
+Keycloak is an open-source identity and access management solution that makes it easy to secure applications and services with little to no code.
+The login data should be directly used from the Keycloak server.
+The backend of the application must not store any login data.
+
+===== Logout
+
+To log out, you need to use the Logout Endpoint / Logout-URL of the Keycloak server.
