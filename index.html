@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="generator" content="Asciidoctor 2.0.22">
 <meta name="author" content="Thomas W. Stütz">
 <link rel="icon" type="image/png" href="themes/favicon.png">
 <title>Lecture Notes - 23-24 - 4bhif - syp</title>
@@ -142,7 +142,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #content::before{content:none}
 #header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
 #header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
-#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
 #header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
 #header .details span:first-child{margin-left:-.125em}
 #header .details span.email a{color:rgba(0,0,0,.85)}
@@ -164,6 +164,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #toctitle{color:#7a2518;font-size:1.2em}
 @media screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
+body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
 #toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
 #toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
 #toc.toc2>ul{font-size:.9em;margin-bottom:0}
@@ -329,7 +330,7 @@ a.image{text-decoration:none;display:inline-block}
 a.image object{pointer-events:none}
 sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
 sup.footnote a,sup.footnoteref a{text-decoration:none}
-sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
 #footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
 #footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
@@ -556,7 +557,7 @@ pre.rouge .gs {
 <div class="details">
 <span id="author" class="author">Thomas W. Stütz</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2024-02-14</span>
+<span id="revdate">2024-04-02</span>
 <br><span id="revremark">Informationstechnische Projekte</span>
 </div>
 <div id="toc" class="toc2">
@@ -616,6 +617,21 @@ pre.rouge .gs {
 <li><a href="#_kubernetes">10.1. Kubernetes</a></li>
 </ul>
 </li>
+<li><a href="#_2024_02_04">11. 2024-02-04</a>
+<ul class="sectlevel2">
+<li><a href="#_manuelles_deployment_zu_minikube">11.1. Manuelles Deployment zu Minikube</a></li>
+</ul>
+</li>
+<li><a href="#_2024_02_05">12. 2024-02-05</a>
+<ul class="sectlevel2">
+<li><a href="#_dashboards">12.1. Dashboards</a></li>
+<li><a href="#_kiosk_systeme">12.2. Kiosk-Systeme</a></li>
+<li><a href="#_hosting_von_projekten">12.3. Hosting von Projekten</a></li>
+<li><a href="#_deployment_in_die_leocloud">12.4. Deployment in die LeoCloud</a></li>
+</ul>
+</li>
+<li><a href="#_2024_03_11">13. 2024-03-11</a></li>
+<li><a href="#_2024_04_02_testen">14. 2024-04-02 Testen</a></li>
 </ul>
 </div>
 </div>
@@ -1553,11 +1569,193 @@ Das "**" repräsentiert "null oder mehr Verzeichnisse", und "*.adoc" steht für 
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_2024_02_04"><a class="anchor" href="#_2024_02_04"></a>11. 2024-02-04</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_manuelles_deployment_zu_minikube"><a class="anchor" href="#_manuelles_deployment_zu_minikube"></a>11.1. Manuelles Deployment zu Minikube</h3>
+<div class="listingblock">
+<div class="content">
+<pre>./mvnw clean package
+l target
+cp src/main/docker/Dockerfile target
+l target
+docker build --tag ghcr.io/htl-leonding/backend:latest ./target
+docker image ls
+docker image prune
+docker image ls
+docker login ghcr.io
+docker push ghcr.io/htl-leonding/backend:latest
+minikube status
+minikube delete
+minikube start
+minikube dashboard
+kubectl apply -f ./k8s/postgres.yaml
+kubectl apply -f appsrv.yaml
+kubectl apply -f ./k8s/appsrv.yaml
+./mvnw clean package
+cp src/main/docker/Dockerfile target
+docker build --tag ghcr.io/htl-leonding/backend:latest ./target
+docker image ls
+docker push ghcr.io/htl-leonding/backend:latest
+kubectl rollout restart deployment appsrv
+./mvnw clean package
+cp src/main/docker/Dockerfile target
+docker build --tag ghcr.io/htl-leonding/backend:latest ./target
+docker push ghcr.io/htl-leonding/backend:latest
+kubectl rollout restart deployment appsrv
+kubectl port-forward appsrv-67464f9c4d-sr4cx 8080:8080
+kubectl port-forward appsrv-5684cc66c8-n6tcg 8080:8080
+kubectl port-forward appsrv-67464f9c4d-sr4cx 8080:8080
+brew update &amp;&amp; brew upgrade &amp;&amp; brew upgrade --cask
+cd
+cd .kube
+l
+cat config
+ll
+l
+minikube stop
+cat config
+cat ~/.zsh_history</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2024_02_05"><a class="anchor" href="#_2024_02_05"></a>12. 2024-02-05</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_dashboards"><a class="anchor" href="#_dashboards"></a>12.1. Dashboards</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Indikatoren und Kennzahlen in Dashboards sollen nicht nur den aktuellen Wert anzeigen, sondern dem Betrachter eine Orientierung bieten.
+Folgende Fragen werden beantwortet:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ist der Wert "gut" oder "schlecht"?</p>
+</li>
+<li>
+<p>Alternativ: Hat sich der Wert zur Vor-Periode verändert?</p>
+</li>
+<li>
+<p>Kann durch "Traffic Lighting" informativ dargestellt werden.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/traffic-lighting.png" alt="traffic lighting">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Definition:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Indikator: Ist ein einzelner Wert (gemessen, gewogen, gezählt) zB Kosten, Umsatz, Kündigungsrate</p>
+</li>
+<li>
+<p>Kennzahl: Wird aus Indikatoren und anderen Kennzahlen berechnet zB ROI</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kiosk_systeme"><a class="anchor" href="#_kiosk_systeme"></a>12.2. Kiosk-Systeme</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>interaktiv</p>
+</li>
+<li>
+<p>nicht-interaktiv</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://www.linkedin.com/pulse/what-kiosk-types-benefits-examples-jimmy-wang/" target="_blank" rel="noopener">What Is a Kiosk ? Types, Benefits &amp; Examples</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hosting_von_projekten"><a class="anchor" href="#_hosting_von_projekten"></a>12.3. Hosting von Projekten</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Oracle VM</p>
+</li>
+<li>
+<p>VM vom Sysadmin</p>
+</li>
+<li>
+<p>LeoCloud</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deployment_in_die_leocloud"><a class="anchor" href="#_deployment_in_die_leocloud"></a>12.4. Deployment in die LeoCloud</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2024_03_11"><a class="anchor" href="#_2024_03_11"></a>13. 2024-03-11</h2>
+<div class="sectionbody">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0swOh5C3OVM?si=gB0FcsP3anrOkmLx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2024_04_02_testen"><a class="anchor" href="#_2024_04_02_testen"></a>14. 2024-04-02 Testen</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/tests-in-projekten.png" alt="tests in projekten">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/v-modell.png" alt="v modell">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/klassisch-vs-agil.png" alt="klassisch vs agil">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/grobentwurf.png" alt="grobentwurf">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/regressionstests.png" alt="regressionstests">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/testplan.png" alt="testplan">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/test02.png" alt="test02">
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2024-02-14 07:41:28 UTC
+Last updated 2024-04-02 08:58:55 UTC
 </div>
 </div>
 </body>
