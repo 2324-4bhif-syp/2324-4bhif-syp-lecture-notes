@@ -538,23 +538,116 @@ image::leoenergy-demo-data-server.png[]
 ++++
 
 
+== 2024-02-04
+
+=== Manuelles Deployment zu Minikube
+
+----
+./mvnw clean package
+l target
+cp src/main/docker/Dockerfile target
+l target
+docker build --tag ghcr.io/htl-leonding/backend:latest ./target
+docker image ls
+docker image prune
+docker image ls
+docker login ghcr.io
+docker push ghcr.io/htl-leonding/backend:latest
+minikube status
+minikube delete
+minikube start
+minikube dashboard
+kubectl apply -f ./k8s/postgres.yaml
+kubectl apply -f appsrv.yaml
+kubectl apply -f ./k8s/appsrv.yaml
+./mvnw clean package
+cp src/main/docker/Dockerfile target
+docker build --tag ghcr.io/htl-leonding/backend:latest ./target
+docker image ls
+docker push ghcr.io/htl-leonding/backend:latest
+kubectl rollout restart deployment appsrv
+./mvnw clean package
+cp src/main/docker/Dockerfile target
+docker build --tag ghcr.io/htl-leonding/backend:latest ./target
+docker push ghcr.io/htl-leonding/backend:latest
+kubectl rollout restart deployment appsrv
+kubectl port-forward appsrv-67464f9c4d-sr4cx 8080:8080
+kubectl port-forward appsrv-5684cc66c8-n6tcg 8080:8080
+kubectl port-forward appsrv-67464f9c4d-sr4cx 8080:8080
+brew update && brew upgrade && brew upgrade --cask
+cd
+cd .kube
+l
+cat config
+ll
+l
+minikube stop
+cat config
+cat ~/.zsh_history
+----
+
+== 2024-02-05
+
+=== Dashboards
+
+* Die Indikatoren und Kennzahlen in Dashboards sollen nicht nur den aktuellen Wert anzeigen, sondern dem Betrachter eine Orientierung bieten.
+Folgende Fragen werden beantwortet:
+** Ist der Wert "gut" oder "schlecht"?
+** Alternativ: Hat sich der Wert zur Vor-Periode verändert?
+** Kann durch "Traffic Lighting" informativ dargestellt werden.
++
+image::traffic-lighting.png[]
 
 
 
+* Definition:
+** Indikator: Ist ein einzelner Wert (gemessen, gewogen, gezählt) zB Kosten, Umsatz, Kündigungsrate
+** Kennzahl: Wird aus Indikatoren und anderen Kennzahlen berechnet zB ROI
 
 
 
+=== Kiosk-Systeme
+
+* interaktiv
+* nicht-interaktiv
+
+https://www.linkedin.com/pulse/what-kiosk-types-benefits-examples-jimmy-wang/[What Is a Kiosk ? Types, Benefits & Examples^]
 
 
 
+=== Hosting von Projekten
+
+* Oracle VM
+* VM vom Sysadmin
+* LeoCloud
+
+
+=== Deployment in die LeoCloud
+
+
+== 2024-03-11
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0swOh5C3OVM?si=gB0FcsP3anrOkmLx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+++++
 
 
 
+== 2024-04-02 Testen
 
+image::tests-in-projekten.png[]
 
+image::v-modell.png[]
 
+image::klassisch-vs-agil.png[]
 
+image::grobentwurf.png[]
 
+image::regressionstests.png[]
+
+image::testplan.png[]
+
+image::test02.png[]
 
 
 
