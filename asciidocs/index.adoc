@@ -651,3 +651,38 @@ image::test02.png[]
 
 
 
+== 2024-05-21 Keycloak
+
+
+* IAM - Identity and Access Management
+
+** Authentification (Wer bin ich?)
+** Authorization (Was darf ich?)
+
+* Alternativen zu Keycloak
+
+** Authentik
+** Authelia
+** Auth0 (kommerziell)
+** Okta (kommerziell)
+
+
+* Hosting-Varianten
+** Hosting on-premise
+** für jedes deployment (k8s) einen eigenen keycloak Server
+** externes Hosting
+
+
+
+* Quellen
+
+** https://www.youtube.com/watch?v=6ye4lP9EA2Y
+
+
+
+
+
+
+
+
+
